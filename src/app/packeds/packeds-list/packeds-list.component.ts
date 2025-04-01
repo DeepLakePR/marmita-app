@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { PackedsItemComponent } from "./packeds-item/packeds-item.component";
-import { Packed } from './packed.model';
+import { Packed } from '../packed.model';
 import { CommonModule } from '@angular/common';
 
 @Component({
