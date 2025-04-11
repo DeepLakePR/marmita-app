@@ -1,9 +1,17 @@
 <div class="row">
-    <div class="col-md-5">
-        <app-packeds-list></app-packeds-list>
+    <div class="col-md-5 mt-2">
+        <app-packeds-list (packedWasSelected)="selectedPacked = $event"></app-packeds-list>
     </div>
 
     <div class="col-md-7">
-        <app-packeds-details></app-packeds-details>
+        <app-packeds-details 
+            *ngIf="selectedPacked; else info"
+            [packedSelected]="selectedPacked">
+        </app-packeds-details>
+
+        <ng-template #info>
+            <p>Por favor selecione uma marmita</p>
+        </ng-template>
+
     </div>
 </div>

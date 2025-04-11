@@ -3,27 +3,14 @@
         <button class="btn btn-success">Nova Marmita</button>
     </div>
 </div>
-<div class="row">
+<div class="row packeds-list p-2">
     <div class="col-12">
 
-        <a href="#" class="list-group-item clearfix"
-        *ngFor="let packed of packeds; index as i">
+        <app-packeds-item *ngFor="let packedElement of packeds; index as i"
+        [packed]="packedElement"
+        (packedSelected)="onPackedSelected(packedElement)">
 
-            <div class="float-start">
-                <h4 class="list-group-item-heading">{{ packed.name }}</h4>
-                <p class="list-group-item-text">{{ packed.description }}</p>
-            </div>
+        </app-packeds-item>
 
-            <div class="float-end">
-                <img 
-                    [src]="packed.imagePath" alt="{{ packed.name }}" 
-                    class="img-responsive" style="max-height: 50px;" 
-                />
-            </div>
-
-        </a>
-
-
-        <!-- <app-packeds-item></app-packeds-item> -->
     </div>
 </div>

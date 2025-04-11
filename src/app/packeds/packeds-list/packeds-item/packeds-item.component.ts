@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Packed } from '../../packed.model';
 
 @Component({
   selector: 'app-packeds-item',
@@ -7,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrl: './packeds-item.component.css'
 })
 export class PackedsItemComponent {
+
+  @Input() packed!: Packed;
+  @Output() packedSelected = new EventEmitter<void>();
+
+  onSelected(){
+    this.packedSelected.emit();
+
+  }
 
 }

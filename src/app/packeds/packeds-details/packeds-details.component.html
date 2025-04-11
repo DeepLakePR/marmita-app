@@ -1,14 +1,14 @@
 <div class="row">
     <div class="col-12">
 
-        <img src="" alt="" class="img-responsive">
+        <img src="{{ packedSelected.imagePath }}" alt="{{ packedSelected.name }}" class="img-responsive" style="max-height: 300px;">
 
     </div>
 </div>
 
 <div class="rol">
     <div class="col-12">
-        <h1>Marmita Name</h1>
+        <h1>{{ packedSelected.name }}</h1>
     </div>
 </div>
 
@@ -28,7 +28,7 @@
 
 <div class="row">
     <div class="col-12">
-        <p>Description</p>
+        <p>{{ packedSelected.description }}</p>
     </div>
 </div>
 

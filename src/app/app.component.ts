@@ -7,6 +7,7 @@ import { PackedsDetailsComponent } from './packeds/packeds-details/packeds-detai
 import { PackedsItemComponent } from './packeds/packeds-list/packeds-item/packeds-item.component';
 import { FoodListComponent } from './food-list/food-list.component';
 import { FoodEditComponent } from './food-list/food-edit/food-edit.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -18,10 +19,19 @@ import { FoodEditComponent } from './food-list/food-edit/food-edit.component';
     PackedsItemComponent,
     FoodListComponent,
     FoodEditComponent,
+    CommonModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   
+  loadedFeature = 'packeds';
+
+  onNavigate(feature: string){
+    this.loadedFeature = feature;
+    console.log(feature);
+
+  }
+
 }

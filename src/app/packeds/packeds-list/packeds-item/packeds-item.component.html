@@ -1,1 +1,12 @@
-<p>packeds-item works!</p>
+<a href="#" class="list-group-item clearfix" (click)="onSelected()">
+
+    <div class="float-start">
+        <h4 class="list-group-item-heading">{{ packed.name }}</h4>
+        <p class="list-group-item-text">{{ packed.description }}</p>
+    </div>
+
+    <div class="float-end">
+        <img [src]="packed.imagePath" alt="{{ packed.name }}" class="img-responsive" style="height: 50px; object-fit: cover; min-height: 50px; max-height: 50px;" />
+</div>
+
+</a>

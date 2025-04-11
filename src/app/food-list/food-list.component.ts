@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FoodEditComponent } from "./food-edit/food-edit.component";
 import { Food } from '../shared/food.model';
 import { CommonModule } from '@angular/common';
@@ -20,5 +20,10 @@ export class FoodListComponent {
     new Food('Arroz', 2),
     new Food('Couve Refogada', 2)
   ];
+
+  onFoodAdded(food: Food){
+    this.foodList.push(food);
+
+  }
 
 }
