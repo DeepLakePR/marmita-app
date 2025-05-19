@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FoodEditComponent } from "./food-edit/food-edit.component";
 import { Food } from '../shared/food.model';
 import { CommonModule } from '@angular/common';
+import { FoodListService } from './food-list.service';
 
 @Component({
   selector: 'app-food-list',
@@ -13,17 +14,24 @@ import { CommonModule } from '@angular/common';
   styleUrl: './food-list.component.css'
 })
 
-export class FoodListComponent {
+export class FoodListComponent implements OnInit, OnDestroy {
 
-  foodList: Food[] = [
-    new Food('Carne', 1),
-    new Food('Arroz', 2),
-    new Food('Couve Refogada', 2)
-  ];
+  foodList!: Food[];
 
-  onFoodAdded(food: Food){
-    this.foodList.push(food);
+  constructor(private foodListService: FoodListService) { }
 
+  ngOnInit() {
+    this.foodList = this.foodListService.getFoods();
+    console.log('helloworld');
+    
+    this.foodListService.foodsChanged.subscribe((foods: Food[]) => {
+      this.foodList = foods;
+
+    });
+  }
+
+  ngOnDestroy() {
+    // this.foodListService.foodsChanged.unsubscribe();
   }
 
 }

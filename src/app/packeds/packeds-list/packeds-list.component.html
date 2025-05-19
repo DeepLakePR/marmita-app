@@ -7,8 +7,7 @@
     <div class="col-12">
 
         <app-packeds-item *ngFor="let packedElement of packeds; index as i"
-        [packed]="packedElement"
-        (packedSelected)="onPackedSelected(packedElement)">
+        [packed]="packedElement">
 
         </app-packeds-item>
 

@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input,  } from '@angular/core';
 import { Packed } from '../../packed.model';
+import { PackedService } from '../../packed.service';
 
 @Component({
   selector: 'app-packeds-item',
@@ -10,11 +11,11 @@ import { Packed } from '../../packed.model';
 export class PackedsItemComponent {
 
   @Input() packed!: Packed;
-  @Output() packedSelected = new EventEmitter<void>();
+
+  constructor(private packedService: PackedService) {}
 
   onSelected(){
-    this.packedSelected.emit();
-
+    this.packedService.packedSelected.emit(this.packed);
   }
 
 }

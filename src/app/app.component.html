@@ -3,8 +3,9 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <app-packeds *ngIf="loadedFeature === 'packeds'"></app-packeds>
-            <app-food-list *ngIf="loadedFeature === 'food-list'"></app-food-list>
+            <!-- <app-packeds *ngIf="loadedFeature === 'packeds'"></app-packeds> -->
+            <!-- <app-food-list *ngIf="loadedFeature === 'food-list'"></app-food-list> -->
+            <router-outlet></router-outlet>
         </div>
     </div>
 </div>

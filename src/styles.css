@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+.dropdown-toggle.show + ul.dropdown-menu{
+    display: block;
+    position: absolute;
+    transform: translate3d(0px, 38px, 0px);
+    top: 0;
+    left: 0;
+    will-change: transform;
+}
