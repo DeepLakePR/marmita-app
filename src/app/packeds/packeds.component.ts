@@ -1,17 +1,17 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { PackedsDetailsComponent } from "./packeds-details/packeds-details.component";
 import { PackedsListComponent } from './packeds-list/packeds-list.component';
 import { Packed } from './packed.model';
 import { CommonModule } from '@angular/common';
 import { PackedService } from './packed.service';
 import { Subscription } from 'rxjs';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-packeds',
   imports: [
     PackedsListComponent,
-    PackedsDetailsComponent,
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   providers: [
     PackedService

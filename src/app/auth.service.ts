@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 @Injectable()
 export class AuthService {
 
-    loggedIn: Boolean = false;
+    loggedIn: Boolean = true;
 
     login() {
         this.loggedIn = true;
@@ -18,7 +18,7 @@ export class AuthService {
             setTimeout(() => {
                 resolve(this.loggedIn);
                 
-            }, 800);
+            }, 150);
         });
 
         return promise;
